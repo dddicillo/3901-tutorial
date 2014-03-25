@@ -164,6 +164,13 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 
 ##Ruby
 
+The Ruby section of this tutorial will focus on introducing the basics of Ruby as well as the differences between Ruby and other similar languages. Ruby is a easy to learn yet powerful programing language.
+
+#### Object-Oriented
+
+
+ Ruby is a pure **Object-Oriented** programing language. This means that Ruby supports the creation of objects as well as classes. 
+
 [DocumentObj]: https://developer.mozilla.org/en-US/docs/Web/API/document
 [WindowObj]: https://developer.mozilla.org/en-US/docs/Web/API/Window
 [Operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
