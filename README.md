@@ -156,9 +156,66 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 
 #### Functions
 
-##### Anonymity
+Functions are one of the dundamental building blocks in JavaScript.
+
+For example, to define a simple function called half:
+	
+	function half(num) {
+		return num / 2;
+	}
+
+If an object is passed as a parameter and the object's properties are changed by the function, then the change is visible outside the function. For example:
+
+	function myFunc(theObject) {
+	  theObject.type = "Husky";
+	}
+
+	var dog = {type: "Golden Retriever"}, x, y;
+
+	x = dog.type;     // x is "Golden Retriever"
+	myFunc(dog);
+	y = dog.type;     // y is "Husky"
+
+A function can be anonymous, for example:
+
+	var square = function(num) {return num * num};
+	var x = square(5) //x is 25
+
+Passing a function as an argument to another function:
+
+	function map(fun,b) {
+	  var result = [], i;
+	  for (i = 0; i != b.length; i++)
+	    result[i] = fun(b[i]);
+	  return result;
+	}
+
+For the following code:
+	map(function(x) {return x * x * x}, [0, 1, 2, 5, 10]);
+returns [0, 1, 8, 125, 1000].
+
+##### Scope
+
+If a variable is defined inside a function, it cannot be accessed from anywhere outside the function because the variable is defined only in the scope of the function. Also, a function defined inside another function can access all variables defined in its perent function.
 
 ##### Closure
+
+Closure features are powerfull in JavaScript which allows nesting of functions. 
+
+	var pet = function(type) {
+      var getType = function() {
+        return type;
+      }
+      return getType;
+    }
+    var myPet = pet("Husky");
+
+
+The outer function defines a variable called type, and the inner function has access to the type variable of the outer function. The inner function is returned thereby is visible to outer scopes. Finally:
+	myPet();          
+return "Husky"
+
+More about Closures can be found [here][Closures]
 
 #### Events
 
@@ -181,7 +238,21 @@ Chained (In JavaScript)
 	var e = document.getElementById("dog");
 	e.addEventListener("click", woof, false);
 > Note: This is the method you should use in modern web pages.
+
 More details about addEvenListener can be found [here][EventListener]
+
+#### Comments
+
+JavaSrcipt supports:
+
+	// Single line comments
+
+and
+
+	/* 
+	Example of 
+	multi line comments
+	*/
 
 ##Ruby
 
@@ -198,3 +269,4 @@ The Ruby section of this tutorial will focus on introducing the basics of Ruby a
 [Arrays]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [ControlFlow]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements
 [EventListener]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
+[Closures]: http://jibbering.com/faq/notes/closures/
