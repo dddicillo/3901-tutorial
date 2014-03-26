@@ -43,9 +43,9 @@ In the beginning of the HTML document, the document type is declared.
 
 An example of how to declare a document type is:
 
-(In this case, it is for an HTML5 document)
+	//In this case, it is for an HTML5 document)
 
-<!DOCTYPE html>
+	<!DOCTYPE html>
 
 
 #####HTML Elements
