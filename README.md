@@ -162,8 +162,23 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 
 #### Events
 
-Every HTML element has a set of attributes that allow for the execution of JavaScript when certain events happen.
+Every HTML element has a set of attributes that allow for the execution of JavaScript when certain events happen. 
 
+There are three techniques:
+
+Inline (link in HTML itself)
+
+	<a href="catVideos.html" onclick="beHappy()"> Dog pics </a>
+
+Direct (link in JavaScript)
+
+	var e = document.getElementById("dog");
+	e.onclick = woof;
+
+Chained (In JavaScript)
+
+	var e = document.getElementById("dog");
+	e.addEventListener("click", woof, false);
 
 ##Ruby
 
