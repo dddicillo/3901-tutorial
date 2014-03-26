@@ -23,9 +23,9 @@ HTML tags are enclosed by *angle brackets*, and they usually come in pairs.
 
 For example: 
 
-	<html> and </html>
+	<html> </html>
 
-In this case, <html> is known as the start tag and </html> is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
+In this case, "<html>" is known as the start tag and "</html>" is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
 
 The basic structure of HTML tags is:
 
@@ -70,7 +70,7 @@ An example of the page structure should look as follows:
 		</body>
 	</html>
 
-Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
+>Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
 
 #####The Output on the Web Browser
 
@@ -78,7 +78,7 @@ Opening the HTML document in a web browser, the output of the document should di
 
 ![Alt HTML document example](/img1.jpg)
 
-Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
+>Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
 
 
