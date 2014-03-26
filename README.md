@@ -9,15 +9,15 @@ The HTML section will focus primarily on the uniqueness of the language and how 
 HTML means **H**yper **T**ext **M**arkup **L**anguage; it is a language for defining webpages. 
 Moreover, a markup language is a set of markup *tags* that describe the content in the document.  An HTML document is made up of HTML *tags* and plain *text*; it is also referred to as *web pages*. 
 
-###HTML Versions
+#####HTML Versions
 
 There are many versions of HTML, and the latest version being HTML5. The difference between an older version and the new HTML5 is: HTML5 contains new types of *tags* and far more powerful. It is consistent, and its objective is to develop the capability of the browser to be an application platform by using HTML, CSS, and JavaScript. 
 
-###HTML Document Setup
+#####HTML Document Setup
 
 Before the start of writing the language, an HTML document needs to be created. In order to set up an HTML document, open up a New File in any text editor and save it as “yourname.html”. 
 
-###HTML Tags
+#####HTML Tags
 
 HTML tags are enclosed by *angle brackets*, and they usually come in pairs. 
 
@@ -31,7 +31,7 @@ The basic structure of HTML tags is:
 
 	<tagname> text </tagname>
 
-###The <!DOCTYPE> Declaration
+#####The <!DOCTYPE> Declaration
 
 Different versions of HTML has different declarations for its document type, this is because the web browser can only show an HTML page properly if it can identify the HTML type and version used.
 
@@ -46,7 +46,7 @@ An example of how to declare a document type is:
 <!DOCTYPE html>
 
 
-###HTML Elements
+#####HTML Elements
 
 An HTML element is precisely what is between the start and end tags. 
 
@@ -55,7 +55,7 @@ For an example:
 	<b> This is an HTML element </b>
 
 
-###HTML Page Structure
+#####HTML Page Structure
 
 A basic webpage will contain an html, body, heading, and paragraph tag. 
 
@@ -72,11 +72,11 @@ An example of the page structure should look as follows:
 
 Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
 
-###The Output on the Web Browser
+#####The Output on the Web Browser
 
 Opening the HTML document in a web browser, the output of the document should display as follows:
 
-//image
+![Alt HTML document example](/img1.jpg)
 
 Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
