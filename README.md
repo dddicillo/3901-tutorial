@@ -136,7 +136,7 @@ To style an HTML element, CSS permits specifying your own selectors known as “
 An an HTML document, an example of how an id and class will be displayed is as follows:
 
 	<div = id=”thisisid”>
-		<p class=”thisisclass”> This is an example paragraph. >/p>
+		<p class=”thisisclass”> This is an example paragraph. </p>
 	</div>
 
 So, the CSS may look something like this:
