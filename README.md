@@ -162,23 +162,26 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 
 #### Events
 
-Every HTML element has a set of attributes that allow for the execution of JavaScript when certain events happen. 
-
-There are three techniques:
+In JavaScript, tasks can be performed when certain events happen. There are 3 ways to register event handlers for a DOM element:
 
 Inline (link in HTML itself)
 
 	<a href="catVideos.html" onclick="beHappy()"> Dog pics </a>
+> Note: This way should be avoided. This makes the markup bigger and less readable. Concerns of content/structure and behavior are not well-separated, making a bug harder to find.
+
 
 Direct (link in JavaScript)
 
 	var e = document.getElementById("dog");
 	e.onclick = woof;
+> Note: The problem with this method is that only one handler can be set per element and per event.
 
 Chained (In JavaScript)
 
 	var e = document.getElementById("dog");
 	e.addEventListener("click", woof, false);
+> Note: This is the method you should use in modern web pages.
+More details about addEvenListener can be found [here][EventListener]
 
 ##Ruby
 
@@ -194,3 +197,4 @@ The Ruby section of this tutorial will focus on introducing the basics of Ruby a
 [Operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 [Arrays]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [ControlFlow]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements
+[EventListener]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
