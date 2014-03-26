@@ -85,10 +85,6 @@ When performing arithmetic operations, the JavaScript interpreter will use type 
 - `typeof` - Returns the type of the given object in string format
 - `void` - Ignores an expressions return value
 
-##### Literals
-
-**__I MIGHT JUST IGNORE THIS SECTION. WE'LL SEE__**
-
 ##### Arrays
 
 Arrays are defined in the same way as Java, however, one key difference is that they may hold multiple different data types. For example:
@@ -134,7 +130,7 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 			console.log("x equals three!");
 			break;
 		default:
-			console.log("I don't know what is x!")
+			console.log("I don't know what x is!")
 			break;
 	}
 
@@ -639,7 +635,7 @@ In Ruby, a block includes a set of statements and can be declared using the foll
 	
 Blocks can be associated with iterators of data structure such as Array and Hash, or associate yield statement within methods.
 
-Here is an example applying a block to an iterator of an array that calculate the sum of all the integers in the array.
+Here is an example passing a block as a parameter to an iterator of an array that calculate the sum of all the integers in the array.
 
 	a = [1,2,3,5,7,9]
 	sum = 0
@@ -654,7 +650,7 @@ Here is another example applying a block to a method that contains a yield state
 	end
 	foo {|i| print i} // #=> Output: “12345”
 	
-### File I/O
+### I/O
 
 ##### I/O in Console
 
@@ -712,8 +708,8 @@ A Regexp holds a regular expression, used to match a pattern against strings. Re
 Regular expression can be matched in two ways, with `=~` or match method. The `=~` operator is used for matching regular expression pattern with string. It returns the first occurrence index if there is a match, returns `nil` otherwise. The match method is also use for matching regular expression pattern with strings, but it returns a MatchData object if there is a match.
 For example:
 
-	/hello/ =~ “hello world”  // #=> matches literal “hello” in string “hello world” and return 0
-	/hello/.match(“hello world”)  // #=> matches literal “hello” in string 	“hello world” and return #<MatchData "hello">
+	/hello/ =~ “hello world”     // #=> matches literal “hello” in string “hello world” and return 0
+	/hello/.match(“hello world”) // #=> matches literal “hello” in string 	“hello world” and return #<MatchData "hello">
 
 ##### Modifiers:
 
@@ -721,8 +717,8 @@ Modifiers control the matching process and provide a strong influence on how the
 
 Modifiers i can be used to match pattern in case insensitive. For example:
 
-	/mAtCH/i =~ “abc matches”  // #=> 4
-	/mAtCH/ =~ “abc matches”   // #=> nil
+	/mAtCH/i =~ “abc matches” // #=> 4
+	/mAtCH/ =~ “abc matches”  // #=> nil
 	
 Modifier `o` can be used to match pattern performing interpolation only once. For example:
 
@@ -747,7 +743,7 @@ Modifier `m` can be used to match multiple lines and use newline characters as r
 Ruby supports a wide array of commonly used characters within regular expressions.For example: `[]` pattern is used to match any single character in brackets. `$` is used to match pattern at end of lind. `*` is used to match 0 or more occurrences of the pattern it follows.
 The following is an example applying the patterns mentioned above:
 
-	/[Ss]*tring$/ ~= “this is a test sString”  // #=> it matches sString in the end
+	/[Ss]*tring$/ ~= “this is a test sString” // #=> it matches sString in the end
 
 ##### Characters
 
@@ -755,7 +751,7 @@ There are some pre-defined character syntax can be used in regular expression pa
 `\d`, equivalent to `[0-9]`, will match a digit in string. `\s`, equivalent to `[\t\r\n\f]`, will match a space character in string. `\w`, equivalent to `[A-Za-z0-9]`, will match a word character.
 The following is an example applying the characters syntax mentioned above:
 
-	/\d\s*\w*/ ~= “1    abc”   // #=> it matches 1 as digit in the front following 4 spaces, and 3 characters abc in the end
+	/\d\s*\w*/ ~= “1    abc” // #=> it matches 1 as digit in the front following 4 spaces, and 3 characters abc in the end
 
 For more information regarding regular expressions visit [this site][RubyRegular].
 
