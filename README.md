@@ -217,7 +217,7 @@ The outer function defines a variable called type, and the inner function has ac
 
 	myPet();   
 
-it returns "Husky"
+> it returns "Husky"
 
 More about Closures can be found [here][Closures]
 
