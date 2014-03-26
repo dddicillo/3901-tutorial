@@ -747,7 +747,7 @@ Modifier `m` can be used to match multiple lines and use newline characters as r
 Ruby supports a wide array of commonly used characters within regular expressions.For example: `[]` pattern is used to match any single character in brackets. `$` is used to match pattern at end of lind. `*` is used to match 0 or more occurrences of the pattern it follows.
 The following is an example applying the patterns mentioned above:
 
-	/[Ss]*tring$/ = “this is a test sString”  //v#=> it matches sString in the end
+	/[Ss]*tring$/ ~= “this is a test sString”  // #=> it matches sString in the end
 
 ##### Characters
 
