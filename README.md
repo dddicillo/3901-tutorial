@@ -191,8 +191,10 @@ Passing a function as an argument to another function:
 	}
 
 For the following code:
+
 	map(function(x) {return x * x * x}, [0, 1, 2, 5, 10]);
-returns [0, 1, 8, 125, 1000].
+
+> returns [0, 1, 8, 125, 1000].
 
 ##### Scope
 
