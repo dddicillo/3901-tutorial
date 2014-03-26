@@ -21,15 +21,11 @@ Before the start of writing the language, an HTML document needs to be created. 
 
 #####HTML Tags
 
-HTML tags are enclosed by *angle brackets*, and they usually come in pairs. 
-
-For example: 
+HTML tags are enclosed by *angle brackets*, and they usually come in pairs. For example: 
 
 	<html> </html>
 
-In this case, \<html\> is known as the start tag and \</html\> is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
-
-The basic structure of HTML tags is:
+In this case, `<html>` is known as the start tag and `</html>` is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively. The basic structure of HTML tags is:
 
 	<tagname> text </tagname>
 
@@ -37,42 +33,32 @@ The basic structure of HTML tags is:
 
 Different versions of HTML has different declarations for its document type, this is because the web browser can only show an HTML page properly if it can identify the HTML type and version used.
 
-The purpose of the <!DOCTYPE> declaration is primarily to display the web page properly.
+The purpose of the <!DOCTYPE> declaration is primarily to display the web page properly. In the beginning of the HTML document, the document type is declared.
+An example of how to declare a document type is (In this case, it is for an HTML5 document):
 
-In the beginning of the HTML document, the document type is declared.
-
-An example of how to declare a document type is:
-
-(In this case, it is for an HTML5 document)
-
-<!DOCTYPE html>
-
+	<!DOCTYPE html>
 
 #####HTML Elements
 
-An HTML element is precisely what is between the start and end tags. 
-
-For an example:
+An HTML element is precisely what is between the start and end tags. For example:
 
 	<b> This is an HTML element </b>
 
-
 #####HTML Page Structure
 
-A basic webpage will contain an html, body, heading, and paragraph tag. 
-
-An example of the page structure should look as follows:
-
-(Assuming the document type declaration is already inserted)
+A basic webpage will contain an html, body, heading, and paragraph tag. An example of the page structure should look as follows (Assuming the document type declaration is already inserted):
 
 	<html>
 		<body>
 			<h1> Heading Title </h1>
-	<p> Paragraph: this is where all the content will go. There can be as many paragraph tags as one would like. There is no limit. </p>
+			<p>
+				Paragraph: this is where all the content will go. 
+				There can be as many paragraph tags as one would like.
+			</p>
 		</body>
 	</html>
 
->Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
+> Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
 
 #####The Output on the Web Browser
 
@@ -80,17 +66,13 @@ Opening the HTML document in a web browser, the output of the document should di
 
 ![Alt HTML document example](/img1.png)
 
->Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
-
+> Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
 ###CSS
-
 
 The CSS section will focus primarily on the uniqueness of the language and how it is used in web development corresponding with HTML. This section will cover the several aspects of CSS and how to stylize your webpage using HTML and CSS both. 
 
 CSS means <b>C</b>ascaded <b>S</b>tyle <b>S</b>heets; it primarily is used to style the HTML elements. However, in an HTML document, one is able to style the document directly in the HTML file but it can be messy and long, and also more work if there needs to be a change in the overall style of the webpage. The external style sheets uses the idea of *single point of control*.
-
-
 
 ## JavaScript
 
