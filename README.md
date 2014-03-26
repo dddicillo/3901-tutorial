@@ -4,6 +4,85 @@ This tutorial aims to provide a thorough explanation of three key elements relat
 
 ## HTML/CSS
 
+The HTML section will focus primarily on the uniqueness of the language and how it is used in web development. This section will cover the several aspects of HTML and how to create a webpage-using HTML. 
+
+HTML means **H**yper **T**ext **M**arkup **L**anguage; it is a language for defining webpages. 
+Moreover, a markup language is a set of markup *tags* that describe the content in the document.  An HTML document is made up of HTML *tags* and plain *text*; it is also referred to as *web pages*. 
+
+###HTML Versions
+
+There are many versions of HTML, and the latest version being HTML5. The difference between an older version and the new HTML5 is: HTML5 contains new types of *tags* and far more powerful. It is consistent, and its objective is to develop the capability of the browser to be an application platform by using HTML, CSS, and JavaScript. 
+
+###HTML Document Setup
+
+Before the start of writing the language, an HTML document needs to be created. In order to set up an HTML document, open up a New File in any text editor and save it as “yourname.html”. 
+
+###HTML Tags
+
+HTML tags are enclosed by *angle brackets*, and they usually come in pairs. 
+
+For example: 
+
+	<html> and </html>
+
+In this case, <html> is known as the start tag and </html> is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
+
+The basic structure of HTML tags is:
+
+	<tagname> text </tagname>
+
+###The <!DOCTYPE> Declaration
+
+Different versions of HTML has different declarations for its document type, this is because the web browser can only show an HTML page properly if it can identify the HTML type and version used.
+
+The purpose of the <!DOCTYPE> declaration is primarily to display the web page properly.
+
+In the beginning of the HTML document, the document type is declared.
+
+An example of how to declare a document type is:
+
+(In this case, it is for an HTML5 document)
+
+<!DOCTYPE html>
+
+
+###HTML Elements
+
+An HTML element is precisely what is between the start and end tags. 
+
+For an example:
+
+	<b> This is an HTML element </b>
+
+
+###HTML Page Structure
+
+A basic webpage will contain an html, body, heading, and paragraph tag. 
+
+An example of the page structure should look as follows:
+
+(Assuming the document type declaration is already inserted)
+
+	<html>
+		<body>
+			<h1> Heading Title </h1>
+	<p> Paragraph: this is where all the content will go. There can be as many paragraph tags as one would like. There is no limit. </p>
+		</body>
+	</html>
+
+Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
+
+###The Output on the Web Browser
+
+Opening the HTML document in a web browser, the output of the document should display as follows:
+
+//image
+
+Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
+
+
+
+
 ## JavaScript
 
 Once again, this tutorial assumes a certain amount of proficiency in computer programming. The JavaScript section will thus focus mainly on the differences between JavaScript and other common languages. There are many quirks and best practices unique to JavaScript. They will be covered here.
