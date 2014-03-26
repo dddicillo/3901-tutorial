@@ -102,7 +102,6 @@ Internal style sheet will change the overall document but it can become long and
 
 > Note: This will change all the paragraphs to the color blue. One can use classes and id’s to change only a specific paragraph, this is also a better way to organize styles. This will be introduced later. 
 
-
 ##### External Style Sheet
 
 In an HTML document, the internal style tag will display as follows:
@@ -115,52 +114,71 @@ However, to link a CSS file in the HTML document, it will display as follows:
 
 > Note: This will link the CSS file to the HTML Document. Hence, A CSS file will need to created naming it `“yourname.css”`. For better understanding, notice how the style tags or the link tag and element to the CSS file will be inserted inside the head tags in the HTML document. 
 
-
-#####The Basics
+##### The Basics
 
 To get the flow of how CSS works, here is an example of how to stylize the body:
 
-	body{
-	background-color: #333333;
-	color: #999999;
-	font: verdana;
+	body {
+		background-color: #333333;
+		color: #999999;
+		font: verdana;
 	}
 
->Note: This will change the style of the entire body in the HTML document. There are many ways to format an HTML document. One is able to change an entire element in the HTML document like a table or body, this is just one example for a body element.
- 
+> Note: This will change the style of the entire body in the HTML document. There are many ways to format an HTML document. One is able to change an entire element in the HTML document like a table or body, this is just one example for a body element.
 
-#####ID and Class
+##### ID and Class
 
 To style an HTML element, CSS permits specifying your own selectors known as “id” and “class”. An id attribute is for stylizing a single element whereas a class is used for a group of elements. 
 
 An an HTML document, an example of how an id and class will be displayed is as follows:
 
 	<div = id=”thisisid”>
-		<p class=”thisisclass”> This is an example paragraph. >/p>
+		<p class=”thisisclass”> This is an example paragraph. </p>
 	</div>
 
 So, the CSS may look something like this:
 
-	 #thisisid {
-	background-color: #ffffff;
+	#thisisid {
+		background-color: #ffffff;
 	}
-	.thisisclass {
-	color: red;
-	font-weight: bold;
+		.thisisclass {
+		color: red;
+		font-weight: bold;
 	}
 
 > Note: Each id should appear only once in an html file. Classes, however, may be used repeatedly to add style to multiple elements.
 
+##### Priority
 
-#####Using different types of CSS and its Priority
+Now the three different ways to stylize an HTML document have been discussed: inline style, internal style sheet, and external style sheet, all these can be combined together and used all at once.  In addition, each one has a priority level. The inline (inside the HTML element) is given first priority. Second, the internal style sheet (in the head tag) has the next priority. Then, the external style sheet (CSS file created) has priority. Lastly, the browser default has priority. Priority can be overridden using the `!important` flag after the style. For example:
 
-Now that it is said there are three different ways to stylize an HTML document, inline style, internal style sheet, and external style sheet, all these can be combined together and used all at once.  In addition, each one has its priority. The inline (inside the HTML element) is given first priority. Second, the internal style sheet (in the head tag) has the next priority. Then, the external style sheet (CSS file created) has priority. Lastly, the browser default has priority. 
+	body {
+		color: red !important;
+	}
 
-#####The flow of CSS
+This style will receive top priority. Priority within a stylesheet is also determined by specificity, which is related to the number and type of handles associated with each style. Inline styles are given top priority, then styles with the most ids specified, then those with the most classes specified, then those with the most tags specified. For example (in order of decreasing priority):
 
-There are many parts to CSS and ways to format a document such as background color, text color, font, font-family, size, margin, padding, and so much more. Elements can be changed using CSS for a specific class and id or an element. Keep in mind, it is important paying close attention to the priority of each type of CSS being used and whether it may be a class or id attribute or a body. 
+	/* Highest priority */
+	body {
+		color: red !important;
+	}
 
+	#element1 #sub-element1 {
+		color: blue;
+	}
 
+	.container .alert {
+		color: green;
+	}
+	
+	/* Lowest priority */
+	div h1 {
+		color: yellow;
+	}
+
+#####The Flow of CSS
+
+There are many parts to CSS and ways to format a document such as background color, text color, font, font-family, size, margin, padding, and so much more. Elements can be changed using CSS for a specific class and id or an element. Keep in mind, it is important to pay close attention to the priority of each type of CSS being used and whether it may be a class, an id, or a tag. 
 
 ## JavaScript
 
