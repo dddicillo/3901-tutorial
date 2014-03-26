@@ -4,9 +4,11 @@ This tutorial aims to provide a thorough explanation of three key elements relat
 
 ## HTML/CSS
 
+###HTML
+
 The HTML section will focus primarily on the uniqueness of the language and how it is used in web development. This section will cover the several aspects of HTML and how to create a webpage-using HTML. 
 
-HTML means __H__yper **T**ext **M**arkup **L**anguage; it is a language for defining webpages. 
+HTML means <b>H</b>yper Text Markup Language; it is a language for defining webpages. 
 Moreover, a markup language is a set of markup *tags* that describe the content in the document.  An HTML document is made up of HTML *tags* and plain *text*; it is also referred to as *web pages*. 
 
 #####HTML Versions
@@ -25,7 +27,7 @@ For example:
 
 	<html> </html>
 
-In this case, \<html\>" is known as the start tag and "\</html\>" is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
+In this case, \<html\> is known as the start tag and \</html\> is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
 
 The basic structure of HTML tags is:
 
@@ -80,6 +82,14 @@ Opening the HTML document in a web browser, the output of the document should di
 
 >Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
+
+###CSS
+
+CSS
+
+The CSS section will focus primarily on the uniqueness of the language and how it is used in web development corresponding with HTML. This section will cover the several aspects of CSS and how to stylize your webpage using HTML and CSS both. 
+
+CSS means Cascaded Style Sheets; it primarily is used to style the HTML elements. However, in an HTML document, one is able to style the document directly in the HTML file but it can be messy and long, and also more work if there needs to be a change in the overall style of the webpage. The external style sheets uses the idea of *single point of control*.
 
 
 
