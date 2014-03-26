@@ -194,7 +194,7 @@ For the following code:
 
 	map(function(x) {return x * x * x}, [0, 1, 2, 5, 10]);
 
-> returns [0, 1, 8, 125, 1000].
+> it returns [0, 1, 8, 125, 1000].
 
 ##### Scope
 
@@ -213,9 +213,11 @@ Closure features are powerfull in JavaScript which allows nesting of functions.
     var myPet = pet("Husky");
 
 
-The outer function defines a variable called type, and the inner function has access to the type variable of the outer function. The inner function is returned thereby is visible to outer scopes. Finally:
-	myPet();          
-return "Husky"
+The outer function defines a variable called type, and the inner function has access to the type variable of the outer function. The inner function is returned thereby is visible to outer scopes. Finally when this is called:
+
+	myPet();   
+
+it returns "Husky"
 
 More about Closures can be found [here][Closures]
 
