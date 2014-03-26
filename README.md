@@ -260,12 +260,477 @@ and
 
 ##Ruby
 
-The Ruby section of this tutorial will focus on introducing the basics of Ruby as well as the differences between Ruby and other similar languages. Ruby is a easy to learn yet powerful programing language.
+The Ruby section of this tutorial will focus on introducing the fundamentals of Ruby as well as its roll in web application development.
 
-#### Object-Oriented
+### Role in Web Application
+
+When developing a web application, Ruby can be used for different purposes. It can be used for writing SMTP server, FTP daemon, or Web server, or used for CGI programming for defining how information is exchanged between the web server and a custom script. Moreover, with Ruby on Rails, a web application framework that uses Ruby, programmers can build an entire web application with MVC design pattern.
+
+### Environment Setup
+
+Ruby can be used in various ways across multiple platforms. Ruby has an interactive environment called iRb which is a shell extension that can be used for experimentation. iRb is a tool that is installed along with Ruby. If Ruby is already installed, iRb can be accessed by typing irb in the command prompt and the interactive Ruby environment will start. The interactive session may be used to test segments of code without creating an entire project. 
+
+If Ruby is not installed, there are many methods to install Ruby. It is not recommended to use a third party installer other than the programs found in the official documentation. The correct Ruby installation instructions can be found for Windows/Mac OSX/Linux/Unix [here][RubyInstall]. There are many supported methods so the best option is to choose the method that is most comfortable to skill level.
+
+Once Ruby is installed its time to begin writing programs. Ruby programs can be developed directly from a default text editor on any operating system. Some of the most popular Ruby editors are [VIM][RubyVIM], [RubyWin], and [Sublime Text Editor][RubySublime].Now that Ruby has been installed and an editor has been chosen lets dive deeper into Ruby.
+
+### Variables
+
+Variables in Ruby are dynamic typed, which means the user does not need to declare variable types in the program and the type of a variable is known during the run-time. This is similar to variables in JavaScript, but the syntax of declaring a new variable is slightly different.
+In Ruby, the value of an uninitialized variable is nil, which is a null value.
+
+##### Local Variables
+
+A local variable is started with a lowercase letter or `_`, and it only exists in a specific scope. For example:
+
+	def methodA
+		_s = “a new string”
+		puts _s
+	end
+	methodA #=> Output “a new string”
+	puts _s #=> Error: undefined local variable or method ‘_s’
+
+##### Instance Variables vs. Class Variables
+
+An instance variable is started with `@` and it exists only with an instance of a specific class.
+A class variable is started with `@@` and it is static and shared among all instances of a specific class. For example:
+
+	class Rectangle
+		@@color = "blue"
+		def initialize (w, h)
+			@width = w
+			@height = h
+		end
+		def area
+			@width * @height
+		end
+		def print_color
+			puts @@color
+		end
+		def change_color (new_color)
+			@@color = new_color
+		end
+	end
+	rec1 = Rectangle.new(3, 2)
+	rec2 = Rectangle.new(10, 5)
+	puts rec1.area #=> Output “6”
+	puts rec2.area #=> Output “50”
+	rec1.print_color #=> Output “blue”
+	rec1.change_color("red") #=> @@color = “red”
+	rec2.print_color #=> Output “red”, since @@color is shared by all instances of Rectangle
+	
+##### Constants
+
+A variable started with Uppercase letter is consider as a constant in Ruby by convention. For example:
+
+	CONS = 1
+	CONS = 2 #=> warning: already initialized constant CONS
+
+### Operators
+
+##### Arithmetic Operators
+Ruby includes the basic operators such as `+`, `-`, `*`, `/`, but this tutorial is not going to cover these simple operators. Instead this tutorial will discuss the operators that are more unique within Ruby. The two Arithmetic Operators that may not be as intuitive are the modulus and the exponent. 
+The modulus `%` operator divides the left hand operand by the right and returns the remainder.
+
+	5%2 => 1
+
+The exponent `**` operator is self explanatory yet it is denoted differently than most languages. 
+	
+	5**2 => 25
+	
+Ruby does not support the `++` or `--` operators to increment or decrement variables.
+	Assignment Operators
+	Ruby supports the common assignment operators that other languages support. The assignment operators in Ruby are: `+=`, `-=`, `/=`, `*=`, `%=`, `**=`.
+
+##### Parallel Assignment
+Ruby supports parallel assignment of variables. This enables more than one variable to be initialized with a single line of code.
+	
+	x, y, z = 5, 10, 20
+	=> x=5
+	=> y=10
+	=> z=20
+
+##### Comparison Operators
+Ruby supports the basic comparison operators such as `==`, `!=`, `<`, `>`, `<=`, `>=`, as well as more complex operators such as `.eql?`, `<=>`, and `===`.
+
+The `.eql?` operators acts similarly to `==` but `.eql?` is not the same. For instance when you compare integer variables `.eql?` will return the same result as `==`, but comparing string variables may return different results. For example:
+
+	a = “hello”
+	b= “hello”
+	a == b => true
+	a.eql?b => false
+	
+The `.eql?` operator is comparing the reference of a variable. Therefore a and b have the same data value but they have different reference values and therefore are not equivalent.
+
+Another comparison operator that is unique to Ruby is the `<=>` operator. This operator is a combined comparison operator. `<=>` returns 0 if the first operand equals the second, 1 if the first operand is greater than the second and -1 if the first operand is less than the second.
+	
+	1< = >1 => 0
+	1< = >2 => -1
+	2< = >1 => 1
+
+The last comparison operator to discuss is the `===` operator. `===` is used to test equality within a clause of a case statement. For example `===` is used to test if a value is within a desired range.
+
+	(1...5) === 3 => true
+	(0...6) === 7 => false
+
+##### Logical Operators
+Ruby supports all of the common logical operators such as `and`, `or`, `&&`, `||`, `!`, and `not`.
+
+###Data Types
+Ruby has a variety of data types. Some data types are similar to other programing languages and do not need further explanation so this tutorial will cover those data types that need more explanation. The data types that Ruby uses are: Boolean, Number, String, Array and Hashes.
+	
+##### Arrays
+Arrays in Ruby are defined much like other programing languages, however, arrays in Ruby may hold multiple data types. For example:
+
+	myarray = [5,123,”hello”,54,”world”]
+	
+	or
+	
+	myarray = Array.[](4,5,”hello”,”world)
+	
+A unique feature for arrays is that arrays will dynamically change in size as elements are added or removed. Since elements within arrays are referred to by index there are many methods to accessing elements. For example:
+
+	myarray = Array.[](4,5,”hello”,”world)
+	myarray[2] => “hello”
+	myarray[-3] => 5
+	
+For more information on other methods used to access Ruby arrays visit [here][RubyArray]
+
+##### Hashes
+A hash is a collection of key-value pairs. Hashes are similar to Ruby Arrays except the hash performs indexing to keys unlike an array which uses an integer index. There are various ways to create a new hash. An empty has may be created or the hash may be initialized with default values. Examples for creating hashes can be seen below:
+
+	months = Hash.new  => Creates an empty hash
+	months = Hash[“Jan”=>1, “Feb”=>2]
+	
+Hashes in Ruby also contain various methods. For example to obtain all values in the hash the code would look like:
+
+	months = Hash[“Jan”=>1, “Feb”=>2]
+	result = months.values
+	
+For a more comprehensive list of methods for hashes visit [here][RubyHash]
+
+### Control Flow
+The control flow for Ruby is similar to the control flow of other programing languages. In this section of the tutorial examples will be shown for each type. For more detailed information visit [here][RubyControl] 
+##### While/Until Loops
+	i = 0
+	while i<10 do
+		puts i
+		i +=1
+	end
+
+	j=0
+	while j<3
+		puts j
+		j += 1
+		break if i == 2 
+	end
+	
+	The do after the condition of a while loop is optional and does not affect output.
+	
+The Until loops vary from loops of other programing languages. In Ruby the Until loop performs like a while loop but executes until a true condition is met. For example:
+
+	i = 0
+	until i == 3
+		puts i
+		i += 1
+	end
+	
+	or
+	
+	puts i +=1 until i ==3
+	
+	Even though the examples above appear different they perform the same task.	 
+
+##### For Loops
+
+	for i in 1..5 do 
+		puts i
+	end
+	
+	or
+	
+	for j in 1..5 do puts j end
+	
+	The do is optional in the first example but if the for loop is written on a single line it is necessary.
+
+##### If/Then
+
+	if 12 > 10 then 
+		print “12 is greater than 10”
+	end
+	
+	or 
+	
+	print “12 is greater than 10 if 12 > 10
+	
+##### If/Elsif
+
+	if animal == “cat”
+		print “I own a cat”
+	elsif animal == “dog”
+		print “I own a dog”
+	else
+		print “I do not own a cat or dog”
+	end
+	
+##### Unless
+ The Unless statement is an alternative to the if else statement. Below is a comparison between equivalent if else statement and until statement.
+ 
+	if i<5
+		print “Integer is small”
+	else
+		print “Integer is large”
+	end
+	
+	or
+	
+	unless i>5
+		print “Integer is small
+	else
+		print “Integer is large”
+	end
+
+##### Case Statement
+	score = 95
+	result = case score
+		when 0..60 then “fail”
+		when 61..80 then “average”
+		when 81..99 then “above average”
+		when 100 then “perfect”
+	end
+	puts result
+	
+### Ranges
+Ruby supports ranges of various data types since ranges may be used in a variety of ways. Ruby ranges may be ranges as sequences, ranges as conditions, or ranges as intervals. 
+##### Ranges as Sequences
+This is the most common and widely used form for a range. Ranges as sequences in Ruby can be created using `..` or `...` operators. The `..` operator creates an inclusive range while the `...` operator creates a range that excludes the largest value.
+
+	(1..5)	#==> 1, 2, 3, 4, 5
+	(1...5)	#==> 1, 2, 3, 4
+	(‘a’..’c’) #==> ‘a’, ‘b’, ‘c’
+	
+##### Ranges as Conditions
+Ranges in Ruby may be used as conditional expressions. For example a case statement may use a range as conditions to determine output. 
+	
+	score = 95
+	result = case score
+		when 0..60 then “fail”
+		when 61..80 then “average”
+		when 81..99 then “above average”
+		when 100 then “perfect”
+	end
+	puts result
+	
+##### Ranges as Intervals
+This type of range is generally used for interval testing. Interval testing is done by checking to see if a given value is represented by a range. 
+
+	if ((1..5) === 2)
+		print “Included”
+	end
+	if ((‘a’..’c’) === ‘b’)
+		print “included”
+
+### Classes
+Classes in Ruby are similar to other object based programing languages such as Javascript. Classes are blueprints for other objects that will be created. A class consists of data members specific to that class. For example if we wanted to define a class for vehicles we may want to know the vehicles horsepower, type of fuel, and fuel capacity. There may also need to be functions to calculate gas mileage based on driving habits. The class described may be defined as:
+
+	Class Vehicle{
+		def horsepower=(value)
+			@horsepower = value
+		end
+		def fuel_capacity=(value)
+			@fuel_capacity = value
+		end
+		def type_fuel=(value)
+			@type_fuel = value
+		end
+		def gas_mileage(.....)
+		end
+	end
+Ruby classes can be created with any desired number of variables or methods. A class may include public, protected or private methods. Public methods may be accessed by everyone. Protected methods can only be invoked by objects of the defining class and subclasses. Private methods can only be called in the context of the current object. The example below shows a class with all three types of methods.
+
+	class Access
+		def method1
+		end
+		protected 
+			def method2
+			end
+		private
+			def method3
+			end
+	end
+	
+	method1 is public, method2 is protected, and method3 is private.
+
+ 
+
+## Methods
+
+The way methods in Ruby work is similar to other languages, such as JavaScript. The programmer can declare a method with a method name, started with lowercase letter and bundle some statements within the method for later reuse. The syntax of declaring a method in Ruby is as follows:
+
+	def method_name [( [arg [= default]]...[, * arg [, &expr ]])]
+		statements
+	end
+	
+A method can be declared without any parameter. For example,
+	
+	def person_info
+		puts “Tom is 5 years old.”
+	end
+	person_info #=> Output “Tom is 5 years old.”
+
+A method can be declared with parameters. Note that the parentheses around the parameters are not necessary. For example:
+
+	def person_info (name, age)
+		puts “#{name} is #{age} years old.”
+	end
+	person_info “Tom”, 5 #=> Output “Tom is 5 years old.”
+
+Moreover, the parameters in a method can be given default values. When the method is called without one or more parameters passing in, the method will use the default value for those parameters. For example:
+
+	def person_info (name = “Tom”, age = 5)
+		puts “#{name} is #{age} years old.”
+	end
+	person_info #=> Output “Tom is 5 years old.”
+	person_info “John”, 10 #=> Output “John is 10 years old.”
 
 
- Ruby is a pure **Object-Oriented** programing language. This means that Ruby supports the creation of objects as well as classes. 
+### Modules
+In Ruby modules are used to group together methods, classes and constants. Modules provide a namespace which helps prevent name clashes. Modules also implement the mixin facility (which is Ruby’s version of multiple inheritance). Below is an example of a Ruby module which includes methods.
+
+	module Week
+		first_day = “Sunday”
+		def Week.weeks_per_month
+			prints “Four Weeks in a Month”
+		end
+		def Week.weeks_per_year
+			prints “52 Weeks in a year”
+		end
+	end
+	
+For more detailed information about modules or if multiple inheritance is not understood check out [this page][RubyModule] for more information.
+
+### Blocks
+
+In Ruby, a block includes a set of statements and can be declared using the following syntax:
+
+	block_name {statements}
+	
+Blocks can be associated with iterators of data structure such as Array and Hash, or associate yield statement within methods.
+
+Here is an example applying a block to an iterator of an array that calculate the sum of all the integers in the array.
+
+	a = [1,2,3,5,7,9]
+	sum = 0
+	a.each {|i| sum+=i} #=> sum = 42
+	
+Here is another example applying a block to a method that contains a yield statement. In the method, whenever yield executed, it will pass the parameters to the associated block and start to execute the block. And after the block finish executing, it will return to the method and continue.
+
+	def foo
+		for i in 1..5 do
+			yield i
+		end
+	end
+	foo {|i| print i} #=> Output “12345”
+	
+### File I/O
+
+##### I/O in Console
+
+In Ruby, a programmer can use puts method or print method to print a string in console. The difference between them is that, puts will automatically attach a newline character at the end of the string so that after printing the string, the console will start with a new line; whereas print will not start the console with a new line after printing the string. For example:
+
+	puts “string1”
+	print “string2”
+	puts “string3”
+	
+	Output:
+		string1
+		string2string3
+
+A programmer may use putc method to only one character from the console. For example:
+
+	putc “Hello” #=> Output “H”
+
+Also, a programmer can use gets to read a string from the console. For example:
+
+	print “Please enter your name: ” #=> User input: Tom[Enter]
+	name = gets #=> name = “Tom\n”
+
+##### I/O for Files
+
+To open a file, a programmer can use File.new method or File.open method and pass in a filename and open mode as the parameter. The difference between this two methods is that File.open can be associate with a block while File.new cannot.
+The open mode includes the following:
+
+* `r`: Read-only mode
+* `r+`: Read-write mode
+* `w`: Write-only mode, create a new file or overwrites it if a file with the given filename exists
+* `w+`: Read-write mode, create a new file or overwrites it if a file with the given filename exists
+* `a`: Write-only mode, appends the file instead of overwrites it if a file with the given filename exists
+* `a+`: Read and write mode, appends the file instead of overwrites it if a file with the given filename exists
+
+To close a file, a programmer can call the close method of a file to close it.
+
+The way to read or write a file is similar to I/O in console, using puts, print, putc, gets methods. But note that these method will only work will only work with corresponding open mode.
+The following is an example that uses File I/O.
+
+		read_file = File.new(“read.txt”, “r”)
+		write_file = File.new(“write.txt”, “w”)
+		string = read_file.gets
+		write_file.puts string
+		read_file.close
+		write_file.close
+	
+After running the code above, a file with filename “write.txt” is created with the same contents as "read.txt".
+
+### Regular Expressions
+A Regexp holds a regular expression, used to match a pattern against strings. Regexps are created using `/.../` and `%r{...}` literals.
+
+##### Matching
+Regular expression can be matched in two ways, with `=~` or match method. The `=~` operator is used for matching regular expression pattern with string. It returns the first occurrence index if there is a match, returns `nil` otherwise. The match method is also use for matching regular expression pattern with strings, but it returns a MatchData object if there is a match.
+For example:
+
+	/hello/ =~ “hello world”  #=> matches literal “hello” in string “hello world” and return 0
+	/hello/.match(“hello world”)  #=> matches literal “hello” in string 	“hello world” and return #<MatchData "hello">
+
+##### Modifiers:
+Modifiers control the matching process and provide a strong influence on how the regular expression engine processes characters. Regular expression modifiers are placed after the pattern, like so: /foo/modifiers
+
+Modifiers i can be used to match pattern in case insensitive. For example:
+
+	/mAtCH/i =~ “abc matches”  #=> 4
+	/mAtCH/ =~ “abc matches”  #=> nil
+	
+Modifier o can be used to match pattern performing interpolation only once. For example:
+
+	for i in 1..5
+		if /#{i}/o =~ i.to_s
+			puts i
+		end
+		end #=> Output “1” since the interpolation only performed once.
+		
+Modifier x can be used to match pattern ignoring whitespace. For example:
+
+	/mat ch/x =~ “abc matches” #=> 4
+	/mat ch/ =~ “abc matches” #=> nil
+	
+Modifier m can be used to match multiple lines and use newline characters as regular expression. For example:
+
+	/abc.ef/m =~ "abc\nef" #=> 0
+	/abc.ef/ =~ "abc\nef" #=> nil
+
+###### Patterns
+Ruby supports a wide array of commonly used characters within regular expressions.For example: `[]` pattern is used to match any single character in brackets. `$` is used to match pattern at end of lind. `*` is used to match 0 or more occurrences of the pattern it follows.
+The following is an example applying the patterns mentioned above:
+
+	/[Ss]*tring$/ = “this is a test sString”  #=> it matches sString in the end
+
+##### Characters
+There are some pre-defined character syntax can be used in regular expression pattern.
+`\d`, equivalent to `[0-9]`, will match a digit in string. `\s`, equivalent to `[\t\r\n\f]`, will match a space character in string. `\w`, equivalent to `[A-Za-z0-9]`, will match a word character.
+The following is an example applying the characters syntax mentioned above:
+
+	/\d\s*\w*/ ~= “1    abc”   #=> it matches 1 as digit in the front following 4 spaces, and 3 characters abc in the end
+
+For more information regarding regular expressions visit [this site][RubyRegular].
 
 [DocumentObj]: https://developer.mozilla.org/en-US/docs/Web/API/document
 [WindowObj]: https://developer.mozilla.org/en-US/docs/Web/API/Window
@@ -274,3 +739,12 @@ The Ruby section of this tutorial will focus on introducing the basics of Ruby a
 [ControlFlow]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements
 [EventListener]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
 [Closures]: http://jibbering.com/faq/notes/closures/
+[RubyInstall]:https://www.ruby-lang.org/en/installation/
+[RubyVim]:http://vim.sourceforge.net
+[RubyWin]:http://homepage1.nifty.com/markey/ruby/rubywin/index_e.html
+[RubySublime]:http://www.sublimetext.com
+[RubyArray]:http://www.ruby-doc.org/core-2.1.1/Array.html 
+[RubyHash]:http://www.tutorialspoint.com/ruby/ruby_hashes.html
+[RubyControl]:http://www.techotopia.com/index.php/Ruby_Essentials
+[RubyModule]:http://www.tutorialspoint.com/ruby/ruby_modules.htm
+[RubyRegular]: http://ruby-doc.org/core-2.1.1/doc/regexp_rdoc.html
