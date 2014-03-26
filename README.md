@@ -349,7 +349,7 @@ For the following code:
 
 ##### Scope
 
-If a variable is defined inside a function, it cannot be accessed from anywhere outside the function because the variable is defined only in the scope of the function. Also, a function defined inside another function can access all variables defined in its perent function.
+If a variable is defined inside a function, it cannot be accessed from anywhere outside the function because the variable is defined only in the scope of the function. Also, a function defined inside another function can access all variables defined in its parent function.
 
 ##### Closure
 
