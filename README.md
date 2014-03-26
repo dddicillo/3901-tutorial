@@ -6,7 +6,7 @@ This tutorial aims to provide a thorough explanation of three key elements relat
 
 The HTML section will focus primarily on the uniqueness of the language and how it is used in web development. This section will cover the several aspects of HTML and how to create a webpage-using HTML. 
 
-HTML means **H**yper **T**ext **M**arkup **L**anguage; it is a language for defining webpages. 
+HTML means __H__yper **T**ext **M**arkup **L**anguage; it is a language for defining webpages. 
 Moreover, a markup language is a set of markup *tags* that describe the content in the document.  An HTML document is made up of HTML *tags* and plain *text*; it is also referred to as *web pages*. 
 
 #####HTML Versions
@@ -25,7 +25,7 @@ For example:
 
 	<html> </html>
 
-In this case, "<html>" is known as the start tag and "</html>" is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
+In this case, \<html\>" is known as the start tag and "\</html\>" is known as the end tag. Start and end tags can be referred to as opening and closing tags, respectively.
 
 The basic structure of HTML tags is:
 
@@ -76,7 +76,7 @@ An example of the page structure should look as follows:
 
 Opening the HTML document in a web browser, the output of the document should display as follows:
 
-![Alt HTML document example](/img1.jpg)
+![Alt HTML document example](/img1.png)
 
 >Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
