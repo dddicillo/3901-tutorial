@@ -1,6 +1,8 @@
-# 3901-tutorial
+# HTML/CSS Javascript and Ruby Tutorial
 
-This tutorial aims to provide a thorough explanation of three key elements related to web development: HTML/CSS, Javascript, and Ruby. Programmers with little to no web development experience should find this tutorial helpful, however, those without prior programming experience should first consult an introductory tutorial first, in order to learn the basic concepts of computer programming.
+This tutorial aims to provide a thorough explanation of three key elements related to web development: HTML/CSS, Javascript, and Ruby. Programmers with little to no web development experience should find this tutorial helpful, however, those without prior programming experience should first consult an introductory tutorial first, in order to learn the basic concepts of computer programming. 
+
+Written By: Amna Khan, Bryan DAgostino, Boming Zhang, Derek DiCillo, and Summer Cui.
 
 ## HTML/CSS
 
@@ -68,7 +70,7 @@ A basic webpage will contain an html, body, heading, and paragraph tag. An examp
 
 Opening the HTML document in a web browser, the output of the document should display as follows:
 
-![Alt HTML document example](/img1.png)
+![Alt HTML document example](./img2.png =650x)
 
 > Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
