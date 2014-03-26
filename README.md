@@ -44,7 +44,7 @@ In the beginning of the HTML document, the document type is declared.
 An example of how to declare a document type is:
 
 	//In this case, it is for an HTML5 document)
-
+	
 	<!DOCTYPE html>
 
 
@@ -63,7 +63,7 @@ A basic webpage will contain an html, body, heading, and paragraph tag.
 
 An example of the page structure should look as follows:
 
-(Assuming the document type declaration is already inserted)
+	//Assuming the document type declaration is already inserted)
 
 	<html>
 		<body>
