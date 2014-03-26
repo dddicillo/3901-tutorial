@@ -43,7 +43,7 @@ In the beginning of the HTML document, the document type is declared.
 
 An example of how to declare a document type is:
 
-	//In this case, it is for an HTML5 document)
+	//In this case, it is for an HTML5 document
 	
 	<!DOCTYPE html>
 
@@ -63,12 +63,12 @@ A basic webpage will contain an html, body, heading, and paragraph tag.
 
 An example of the page structure should look as follows:
 
-	//Assuming the document type declaration is already inserted)
+	//Assuming the document type declaration is already inserted
 
 	<html>
 		<body>
 			<h1> Heading Title </h1>
-	<p> Paragraph: this is where all the content will go. There can be as many paragraph tags as one would like. There is no limit. </p>
+			<p> Paragraph: this is where all the content will go. There can be as many paragraph tags as one would like. There is no limit. </p>
 		</body>
 	</html>
 
@@ -93,7 +93,7 @@ There are three ways to stylize a webpage using CSS: external style sheet, inter
 
 Originally, HTML was not made to style and format a document but to display content in a heading and paragraphs. In the later versions, fonts and styles were introduced using internal inline style and internal style sheet but it became messy and long if changes needed to be made in the document. This is when the external style sheet was introduced.
 
-In an HTML document, the inline style and internal style sheet are more work if there needs to be a single change in the overall style of the webpage whereas the external style sheets uses the idea of **single point of control**. 
+In an HTML document, the inline style and internal style sheet are more work if there needs to be a single change in the overall style of the webpage whereas the external style sheets uses the idea of *single point of control*. 
 
 #####Inline Style
 
