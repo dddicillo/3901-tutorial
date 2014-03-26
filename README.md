@@ -79,7 +79,7 @@ There are three ways to stylize a webpage using CSS: external style sheet, inter
 
 Originally, HTML was not made to style and format a document but to display content in a heading and paragraphs. In the later versions, fonts and styles were introduced using internal inline style and internal style sheet but it became messy and long if changes needed to be made in the document. This is when the external style sheet was introduced.
 
-In an HTML document, the inline style and internal style sheet are more work if there needs to be a single change in the overall style of the webpage whereas the external style sheets uses the idea of **single point of control**. 
+In an HTML document, the inline style and internal style sheet are more work if there needs to be a single change in the overall style of the webpage whereas the external style sheets uses the idea of *single point of control*. 
 
 ##### Inline Style
 
