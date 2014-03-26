@@ -162,6 +162,9 @@ The control flow implemented in JavaScript is almost identical to that of Java, 
 
 #### Events
 
+Every HTML element has a set of attributes that allow for the execution of JavaScript when certain events happen.
+
+
 ##Ruby
 
 The Ruby section of this tutorial will focus on introducing the basics of Ruby as well as the differences between Ruby and other similar languages. Ruby is a easy to learn yet powerful programing language.
