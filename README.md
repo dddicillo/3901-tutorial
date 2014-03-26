@@ -11,15 +11,15 @@ The HTML section will focus primarily on the uniqueness of the language and how 
 HTML means <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage; it is a language for defining webpages. 
 Moreover, a markup language is a set of markup *tags* that describe the content in the document.  An HTML document is made up of HTML *tags* and plain *text*; it is also referred to as *web pages*. 
 
-#####HTML Versions
+##### HTML Versions
 
 There are many versions of HTML, and the latest version being HTML5. The difference between an older version and the new HTML5 is: HTML5 contains new types of *tags* and far more powerful. It is consistent, and its objective is to develop the capability of the browser to be an application platform by using HTML, CSS, and JavaScript. 
 
-#####HTML Document Setup
+##### HTML Document Setup
 
 Before the start of writing the language, an HTML document needs to be created. In order to set up an HTML document, open up a New File in any text editor and save it as “yourname.html”. 
 
-#####HTML Tags
+##### HTML Tags
 
 HTML tags are enclosed by *angle brackets*, and they usually come in pairs. For example: 
 
@@ -29,25 +29,27 @@ In this case, `<html>` is known as the start tag and `</html>` is known as the e
 
 	<tagname> text </tagname>
 
-#####The <!DOCTYPE> Declaration
+##### The <!DOCTYPE> Declaration
 
 Different versions of HTML has different declarations for its document type, this is because the web browser can only show an HTML page properly if it can identify the HTML type and version used.
 
 The purpose of the <!DOCTYPE> declaration is primarily to display the web page properly. In the beginning of the HTML document, the document type is declared.
-An example of how to declare a document type is (In this case, it is for an HTML5 document):
+An example of how to declare a document type is:
 
+	<!-- In this case, it is for an HTML5 document -->
 	<!DOCTYPE html>
 
-#####HTML Elements
+##### HTML Elements
 
 An HTML element is precisely what is between the start and end tags. For example:
 
 	<b> This is an HTML element </b>
 
-#####HTML Page Structure
+##### HTML Page Structure
 
-A basic webpage will contain an html, body, heading, and paragraph tag. An example of the page structure should look as follows (Assuming the document type declaration is already inserted):
+A basic webpage will contain an html, body, heading, and paragraph tag. An example of the page structure should look as follows:
 
+	<!-- Assuming the document type declaration is already inserted -->
 	<html>
 		<body>
 			<h1> Heading Title </h1>
@@ -60,7 +62,7 @@ A basic webpage will contain an html, body, heading, and paragraph tag. An examp
 
 > Note: The best way to understand HTML is to see each start and end tag as a block. Moreover, pay close attention to which block is inside which block. It is important that all other tags besides the document type declaration is inside the html tags. 
 
-#####The Output on the Web Browser
+##### The Output on the Web Browser
 
 Opening the HTML document in a web browser, the output of the document should display as follows:
 
@@ -68,11 +70,77 @@ Opening the HTML document in a web browser, the output of the document should di
 
 > Note: Notice how the tags are not displayed, it is only the content between the tags. This is because the tags are only to help structure the document and how it was be displayed to the user. It helps the browser determine what the content inside the tags are supposed to do.
 
-###CSS
+### CSS
 
-The CSS section will focus primarily on the uniqueness of the language and how it is used in web development corresponding with HTML. This section will cover the several aspects of CSS and how to stylize your webpage using HTML and CSS both. 
+The CSS section will focus primarily on the uniqueness of the language and how it is used in web development corresponding with HTML. This section will cover the several aspects of CSS and how to stylize a webpage using CSS. 
 
-CSS means <b>C</b>ascaded <b>S</b>tyle <b>S</b>heets; it primarily is used to style the HTML elements. However, in an HTML document, one is able to style the document directly in the HTML file but it can be messy and long, and also more work if there needs to be a change in the overall style of the webpage. The external style sheets uses the idea of *single point of control*.
+CSS means <b>C</b>ascaded <b>S</b>tyle <b>S</b>heets; it primarily is used to style the HTML elements. 
+There are three ways to stylize a webpage using CSS: external style sheet, internal style sheet, and inline style. 
+
+Originally, HTML was not made to style and format a document but to display content in a heading and paragraphs. In the later versions, fonts and styles were introduced using internal inline style and internal style sheet but it became messy and long if changes needed to be made in the document. This is when the external style sheet was introduced.
+
+In an HTML document, the inline style and internal style sheet are more work if there needs to be a single change in the overall style of the webpage whereas the external style sheets uses the idea of **single point of control**. 
+
+##### Inline Style
+
+Inline style will only change the font and/or format of one specific block. 
+
+An example of an inline style is as follows:
+
+	<p style=”color:blue;”> This is the text in a certain paragraph that will be blue. </p>
+
+##### Internal Style Sheet
+
+Internal style sheet will change the overall document but it can become long and messy if it is in the HTML document.
+
+An example of an internal style sheet is as follows:
+
+	<head>
+		<style>
+		p {color: blue;}
+		body {background-image:url(“imgURL.png”);}
+		</style>
+	</body>
+
+> Note: This will change all the paragraphs to the color blue. One can use classes and id’s to change only a specific paragraph, this is also a better way to organize styles. This will be introduced later. 
+
+
+##### External Style Sheet
+
+In an HTML document, the internal style tag will display as follows:
+
+	<style> style and format rules go here </style>
+
+However, to link a CSS file in the HTML document, it will display as follows:
+
+	<link rel="stylesheet" type=”text/css” href=”yourname.css" />
+
+> Note: This will link the CSS file to the HTML Document. Hence, A CSS file will need to created naming it “yourname.css”. For better understanding, notice how the style tags or the link tag and element to the CSS file will be inserted inside the head tags in the HTML document. 
+
+##### ID and Class
+
+To style an HTML element, CSS permits specifying your own selectors known as “id” and “class”
+
+An id attribute is for stylizing a single element whereas a class is used for a group of elements. 
+
+An an HTML document, an example of how an id and class will be displayed is as follows:
+
+	<div = id=”thisisid”>
+		<p class=”thisisclass”> This is an example paragraph. >/p>
+	</div>
+
+So, the CSS may look something like this:
+
+	 #thisisid {
+	background-color: #ffffff;
+	}
+	.thisisclass {
+	color: red;
+	font-weight: bold;
+	}
+
+
+##### The flow of CSS
 
 ## JavaScript
 
