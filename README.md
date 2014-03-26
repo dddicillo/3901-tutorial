@@ -29,6 +29,8 @@ In this case, `<html>` is known as the start tag and `</html>` is known as the e
 
 	<tagname> text </tagname>
 
+Check [here][HTMLTags] for a detailed list of HTML5 tags.
+
 ##### The <!DOCTYPE> Declaration
 
 Different versions of HTML has different declarations for its document type, this is because the web browser can only show an HTML page properly if it can identify the HTML type and version used.
@@ -890,6 +892,7 @@ The following is an example applying the characters syntax mentioned above:
 
 For more information regarding regular expressions visit [this site][RubyRegular].
 
+[HTMLTags]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 [DocumentObj]: https://developer.mozilla.org/en-US/docs/Web/API/document
 [WindowObj]: https://developer.mozilla.org/en-US/docs/Web/API/Window
 [Operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
